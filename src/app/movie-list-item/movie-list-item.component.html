@@ -1,0 +1,7 @@
+<p>movie-list-item works!</p>
+
+<h2>{{ movie.title }}</h2>
+<p>{{ movie.year }}</p>
+<img [ngSrc]="movie.poster" width="200" height="300" *ngIf="!!movie.poster" />
+
+<button (click)="click()">Details</button>
