@@ -1,6 +1,5 @@
-<p>movie-list works!</p>
-
+<app-movie-filter (onChange)="filter($event)"></app-movie-filter>
 <app-movie-list-item
-  *ngFor="let movie of movies"
+  *ngFor="let movie of filteredMovies"
   [movie]="movie"
 ></app-movie-list-item>

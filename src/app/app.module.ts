@@ -8,6 +8,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgOptimizedImage } from '@angular/common';
+import { MovieFilterComponent } from './movie-filter/movie-filter.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NgOptimizedImage } from '@angular/common';
     MovieListComponent,
     MovieListItemComponent,
     MovieDetailsComponent,
+    MovieFilterComponent,
   ],
   imports: [
     BrowserModule,

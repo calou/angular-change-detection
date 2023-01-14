@@ -1,4 +1,4 @@
-import { Directive, DoCheck, SimpleChanges } from '@angular/core';
+import { Directive, DoCheck } from '@angular/core';
 
 @Directive()
 export class BaseComponent implements DoCheck {
