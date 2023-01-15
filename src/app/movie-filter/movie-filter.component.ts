@@ -1,10 +1,16 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Output,
+} from '@angular/core';
 import { BaseComponent } from '../base.component';
 
 @Component({
   selector: 'app-movie-filter',
   templateUrl: './movie-filter.component.html',
   styleUrls: ['./movie-filter.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MovieFilterComponent extends BaseComponent {
   @Output()

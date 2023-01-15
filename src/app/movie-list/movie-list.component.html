@@ -1,5 +1,6 @@
 <app-movie-filter (onChange)="filter($event)"></app-movie-filter>
 <app-movie-list-item
-  *ngFor="let movie of filteredMovies"
+  *ngFor="let movie of movies$ | async; trackBy: trackByTitle"
   [movie]="movie"
-></app-movie-list-item>
+>
+</app-movie-list-item>

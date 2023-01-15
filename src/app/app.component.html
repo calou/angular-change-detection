@@ -1,2 +1,2 @@
-<app-movie-details *ngIf="hasSelection"></app-movie-details>
+<app-movie-details *ngIf="hasSelection$ | async"></app-movie-details>
 <app-movie-list></app-movie-list>

@@ -1,15 +1,24 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, map, Observable } from 'rxjs';
 import { Movie } from './movie';
 
 @Injectable({
   providedIn: 'root',
 })
 export class SelectedMovieService {
-  public selection: Movie | undefined;
+  public selection$ = new BehaviorSubject<Movie | undefined>(undefined);
 
-  constructor() { }
+  public hasSelection$: Observable<boolean>;
 
-  public get hasSelection(): boolean {
-    return !!this.selection;
+  constructor() {
+    this.hasSelection$ = this.selection$.pipe(map((movie) => !!movie));
+  }
+
+  public clearSelection(): void {
+    this.selection$.next(undefined);
+  }
+
+  public setSelection(movie: Movie): void {
+    this.selection$.next(movie);
   }
 }
