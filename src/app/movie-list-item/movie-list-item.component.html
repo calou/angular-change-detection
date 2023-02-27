@@ -11,5 +11,9 @@
 
   <div class="btn-group">
     <button (click)="click()">Details</button>
+    <button (click)="movie.liked = true" *ngIf="!movie.liked; else unlike">Like</button>
   </div>
+  <ng-template #unlike>
+    <button (click)="movie.liked = false" >Unlike</button>  
+  </ng-template>
 </div>

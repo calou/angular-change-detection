@@ -12,8 +12,11 @@ export class MovieListItemComponent extends BaseComponent {
   @Input()
   public movie: Movie = {} as Movie;
 
+  private static ITEM_INDEX = 0;
+
   constructor(private readonly _selectedMovieService: SelectedMovieService) {
-    super('movie-list-item');
+    super(`movie-list-item-${MovieListItemComponent.ITEM_INDEX}`);
+    MovieListItemComponent.ITEM_INDEX += 1;
   }
 
   public click(): void {
