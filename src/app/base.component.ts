@@ -1,7 +1,7 @@
-import { Directive, DoCheck } from '@angular/core';
+import { AfterViewChecked, Directive, DoCheck } from '@angular/core';
 
 @Directive()
-export class BaseComponent implements DoCheck {
+export class BaseComponent implements DoCheck, AfterViewChecked {
   private _changeCount = 0;
 
   constructor(private readonly _name: string) {
@@ -11,5 +11,9 @@ export class BaseComponent implements DoCheck {
   public ngDoCheck(): void {
     this._changeCount += 1;
     console.log('Changed', this._name, this._changeCount);
+  }
+
+  public ngAfterViewChecked(): void {
+    console.log('View checked', this._name, this._changeCount);
   }
 }
