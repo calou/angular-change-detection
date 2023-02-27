@@ -25,10 +25,10 @@ export class MovieListComponent extends BaseComponent {
 
   constructor(private readonly _movieService: MovieService) {
     super('movie-list');
-    this.movies$ = combineLatest(
+    this.movies$ = combineLatest([
       this._movieService.getMovies(),
       this.filter$.pipe(distinctUntilChanged(), debounceTime(500))
-    ).pipe(
+    ]).pipe(
       tap((_) => console.log('Changed obs')),
       map(([movies, filterValue]) => this.apply_filter(movies, filterValue))
     );
