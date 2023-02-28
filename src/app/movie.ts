@@ -4,5 +4,6 @@ export interface Movie {
   actors: string;
   poster: string;
   images: Array<string>;
-  liked?: boolean; 
+  liked?: boolean;
+  comment?: string;
 }
